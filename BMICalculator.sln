@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.28010.2026
+VisualStudioVersion = 15.0.28010.2016
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BMICalculator", "BMICalculator\BMICalculator.csproj", "{C03AECFD-4B9F-41AC-8D8E-D357D51A4095}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BMICalculator", "BMICalculator\BMICalculator.csproj", "{6C0E274D-93DF-482B-B206-BFDFED821DF5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C03AECFD-4B9F-41AC-8D8E-D357D51A4095}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C03AECFD-4B9F-41AC-8D8E-D357D51A4095}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C03AECFD-4B9F-41AC-8D8E-D357D51A4095}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C03AECFD-4B9F-41AC-8D8E-D357D51A4095}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C0E274D-93DF-482B-B206-BFDFED821DF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C0E274D-93DF-482B-B206-BFDFED821DF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C0E274D-93DF-482B-B206-BFDFED821DF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C0E274D-93DF-482B-B206-BFDFED821DF5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {023C9662-440C-4E28-8DB7-0746ADBDDE4E}
+		SolutionGuid = {6569C1E6-C87D-4722-836D-C8092FE91228}
 	EndGlobalSection
 EndGlobal

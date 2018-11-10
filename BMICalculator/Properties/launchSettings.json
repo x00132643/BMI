@@ -1,10 +1,10 @@
 ﻿{
   "iisSettings": {
     "windowsAuthentication": false, 
-    "anonymousAuthentication": true,
+    "anonymousAuthentication": true, 
     "iisExpress": {
-        "applicationUrl": "https://bmiwepapp.azurewebsites.net/",
-        "sslPort": 443
+      "applicationUrl": "http://localhost:3455",
+      "sslPort": 44360
     }
   },
   "profiles": {
@@ -16,12 +16,12 @@
       }
     },
     "BMICalculator": {
-        "commandName": "Project",
-        "launchBrowser": true,
-        "applicationUrl": "https://bmiwepapp.azurewebsites.net/",
-        "environmentVariables": {
-            "ASPNETCORE_ENVIRONMENT": "Development"
-        }
+      "commandName": "Project",
+      "launchBrowser": true,
+      "applicationUrl": "https://localhost:5001;http://localhost:5000",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
     }
   }
 }

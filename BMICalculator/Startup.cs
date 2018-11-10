@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace BMICalculator
 {
@@ -34,11 +36,12 @@ namespace BMICalculator
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            //set landing page
+            // set landing page
             services.AddMvc().AddRazorPagesOptions(options =>
             {
                 options.Conventions.AddPageRoute("/bmi", "");
             });
+         
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
