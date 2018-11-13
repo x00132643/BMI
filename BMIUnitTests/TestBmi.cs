@@ -21,7 +21,7 @@ namespace BMIUnitTest
         {
             //arrange
 
-            const double PoundsToKgs = 0.453591;
+            const double PoundsToKgs = 0.453592;
             const double InchestoMetres = 0.0254;
 
             double totalWeightInPounds = (WeightStones * 14) + WeightPounds;
