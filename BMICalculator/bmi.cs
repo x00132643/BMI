@@ -7,9 +7,11 @@ using System.ComponentModel.DataAnnotations;
 namespace BMICalculator
 {
     public enum BMICategory { Underweight, Normal, Overweight, Obese };
+    
 
     public class BMI
     {
+        
         const double UnderWeightUpperLimit = 18.4;              // inclusive upper limit
         const double NormalWeightUpperLimit = 24.9;
         const double OverWeightUpperLimit = 29.9;               // Obese from 30 +
@@ -34,6 +36,10 @@ namespace BMICalculator
         [Range(0, 11, ErrorMessage = "Inches must be between 0 and 11")]                              // 12 inches in a foot
         public int HeightInches { get; set; }
 
+        public static double totalWeightInKgs;
+        public static double totalHeightInMetres;
+        public static string BMICat;
+
         // calculate BMI, display to 2 decimal places
         [Display(Name = "Your BMI is")]
         [DisplayFormat(DataFormatString = "{0:F2}")]
@@ -51,6 +57,8 @@ namespace BMICalculator
                 double totalHeightInMetres = totalHeightInInches * InchestoMetres;
 
                 double bmi = totalWeightInKgs / (Math.Pow(totalHeightInMetres, 2));
+                BMI.totalWeightInKgs = totalWeightInKgs;
+                BMI.totalHeightInMetres = totalHeightInMetres;
 
                 return bmi;
             }
@@ -67,20 +75,46 @@ namespace BMICalculator
                 // calculate BMI category based on upper limits
                 if (bmi <= UnderWeightUpperLimit)
                 {
+                    BMI.BMICat = "Underweight";
                     return BMICategory.Underweight;
                 }
                 else if (bmi <= NormalWeightUpperLimit)
                 {
+                    BMI.BMICat = "Normal";
                     return BMICategory.Normal;
                 }
                 else if (bmi <= OverWeightUpperLimit)
                 {
+                    BMI.BMICat = "Overweight";
                     return BMICategory.Overweight;
                 }
                 else
                 {
+                    BMI.BMICat = "Obese";
                     return BMICategory.Obese;
                 }
+            }
+        }
+        [Display(Name = "You need to loose (KGs):")]
+        [DisplayFormat(DataFormatString = "{0:F1}")]
+        public double Overweight
+        {
+            get
+            {
+                double correctWeight;
+                
+                double Nbmi = 24.9;
+                
+
+                //BMICategory bmiCat = BMICategory;
+                if (BMI.BMICat.Equals("Obese")|| BMI.BMICat.Equals("Overweight"))
+                {
+                    double totalWeightForNormalCategory = Nbmi * (Math.Pow(BMI.totalHeightInMetres, 2));
+                    correctWeight = BMI.totalWeightInKgs - totalWeightForNormalCategory;
+                    return correctWeight;
+
+                }
+                else return 0;
             }
         }
     }
