@@ -2,9 +2,12 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using BMICalculator;
 using System;
 using Moq;
+using System.Diagnostics.CodeAnalysis;
+
 
 namespace BMIUnitTest
 {
+    [ExcludeFromCodeCoverage]
     [TestClass]
     public class TestBmi
 
