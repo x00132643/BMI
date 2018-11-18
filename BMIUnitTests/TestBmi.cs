@@ -9,8 +9,7 @@ namespace BMIUnitTest
     public class TestBmi
 
 
-
-
+       
     {
         [DataRow(1, 1, 1, 1)]
         [DataRow(0, 5, 0, 5)]
