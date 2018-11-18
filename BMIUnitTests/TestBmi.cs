@@ -18,7 +18,7 @@ namespace BMIUnitTest
         [DataTestMethod]
         public void TestBmiValue(int WeightStones, int WeightPounds, int HeightFeet, int HeightInches)
         {
-            //Arrange
+            //arrange
 
             const double PoundsToKgs = 0.453592;
             const double InchestoMetres = 0.0254;
