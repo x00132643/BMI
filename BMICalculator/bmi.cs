@@ -3,6 +3,7 @@
 
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 
 namespace BMICalculator
 {
@@ -65,6 +66,7 @@ namespace BMICalculator
         }
 
         // calculate BMI category 
+        [ExcludeFromCodeCoverage]
         [Display(Name = "Your BMI Category is")]
         public BMICategory BMICategory
         {
