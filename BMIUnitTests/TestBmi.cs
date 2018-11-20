@@ -4,16 +4,11 @@ using System;
 using Moq;
 using System.Diagnostics.CodeAnalysis;
 
-
-namespace BMIUnitTest
+namespace BMICalculatorUnitTest
 {
     [ExcludeFromCodeCoverage]
     [TestClass]
-    public class TestBmi
-
-
-
-
+    public class BMIUnitTest
     {
         [DataRow(1, 1, 1, 1)]
         [DataRow(0, 5, 0, 5)]
@@ -22,7 +17,7 @@ namespace BMIUnitTest
         [DataTestMethod]
         public void TestBmiValue(int WeightStones, int WeightPounds, int HeightFeet, int HeightInches)
         {
-            //Arrange
+            //arrange
 
             const double PoundsToKgs = 0.453592;
             const double InchestoMetres = 0.0254;
@@ -50,5 +45,39 @@ namespace BMIUnitTest
 
         }
 
+        [DataRow(5, 0, 7, 1, "Underweight")]
+        [DataRow(10, 5, 5, 5, "Normal")]
+        [DataRow(14, 0, 6, 0, "Overweight")]
+        [DataRow(14, 0, 5, 0, "Obese")]
+        [DataTestMethod]
+        public void TestBmiCategory(int WeightStones, int WeightPounds, int HeightFeet, int HeightInches, string Output)
+        {
+            //arrange
+
+            const double PoundsToKgs = 0.453592;
+            const double InchestoMetres = 0.0254;
+
+            double totalWeightInPounds = (WeightStones * 14) + WeightPounds;
+            double totalHeightInInches = (HeightFeet * 12) + HeightInches;
+            double totalWeightInKgs = totalWeightInPounds * PoundsToKgs;
+            double totalHeightInMetres = totalHeightInInches * InchestoMetres;
+            string expectedValue = Output;
+
+            BMI TestBmi = new BMI();
+            TestBmi.WeightStones = WeightStones;
+            TestBmi.WeightPounds = WeightPounds;
+            TestBmi.HeightFeet = HeightFeet;
+            TestBmi.HeightInches = HeightInches;
+
+
+
+
+            //act
+            string actualValue = TestBmi.BMICategory.ToString();
+
+            //asserrt
+            Assert.AreEqual(expectedValue, actualValue);
+
+        }
     }
 }
