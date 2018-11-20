@@ -54,13 +54,6 @@ namespace BMICalculatorUnitTest
         {
             //arrange
 
-            const double PoundsToKgs = 0.453592;
-            const double InchestoMetres = 0.0254;
-
-            double totalWeightInPounds = (WeightStones * 14) + WeightPounds;
-            double totalHeightInInches = (HeightFeet * 12) + HeightInches;
-            double totalWeightInKgs = totalWeightInPounds * PoundsToKgs;
-            double totalHeightInMetres = totalHeightInInches * InchestoMetres;
             string expectedValue = Output;
 
             BMI TestBmi = new BMI();
@@ -74,6 +67,33 @@ namespace BMICalculatorUnitTest
 
             //act
             string actualValue = TestBmi.BMICategory.ToString();
+
+            //asserrt
+            Assert.AreEqual(expectedValue, actualValue);
+
+        }
+        [DataRow(5, 0, 7, 1, 0)]
+        [DataRow(10, 5, 5, 5, 0)]
+        [DataRow(14, 0, 6, 0, 5.62574694400001)]
+        [DataRow(14, 0, 5, 0, 31.0718896)]
+        [DataTestMethod]
+        public void TestBmiWeightToLose(int WeightStones, int WeightPounds, int HeightFeet, int HeightInches, double Output)
+        {
+            //arrange
+
+            double expectedValue = Math.Round(Output,2);
+
+            BMI TestBmi = new BMI();
+            TestBmi.WeightStones = WeightStones;
+            TestBmi.WeightPounds = WeightPounds;
+            TestBmi.HeightFeet = HeightFeet;
+            TestBmi.HeightInches = HeightInches;
+
+
+
+
+            //act
+            double actualValue = Math.Round(TestBmi.WeightToLose,2);
 
             //asserrt
             Assert.AreEqual(expectedValue, actualValue);

@@ -62,10 +62,6 @@ namespace BMICalculator
 
                 return bmi;
             }
-            set
-            {
-                this.BMIValue = value;
-            }
         }
 
         // calculate BMI category 
