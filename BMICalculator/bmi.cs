@@ -39,7 +39,6 @@ namespace BMICalculator
 
         public double totalWeightInKgs { get; set; }
         public double totalHeightInMetres { get; set; }
-        public string BMICat { get; set; }
 
         // calculate BMI, display to 2 decimal places
         [Display(Name = "Your BMI is")]
@@ -65,7 +64,7 @@ namespace BMICalculator
             }
             set
             {
-                BMIValue = value;
+                this.BMIValue = value;
             }
         }
 
@@ -81,22 +80,18 @@ namespace BMICalculator
                 // calculate BMI category based on upper limits
                 if (bmi <= UnderWeightUpperLimit)
                 {
-                    this.BMICat = "Underweight";
-                    return BMICategory.Underweight;
+                     return BMICategory.Underweight;
                 }
                 else if (bmi <= NormalWeightUpperLimit)
                 {
-                    this.BMICat = "Normal";
                     return BMICategory.Normal;
                 }
                 else if (bmi <= OverWeightUpperLimit)
                 {
-                    this.BMICat = "Overweight";
                     return BMICategory.Overweight;
                 }
                 else
                 {
-                    this.BMICat = "Obese";
                     return BMICategory.Obese;
                 }
             }
@@ -111,7 +106,7 @@ namespace BMICalculator
                 double correctWeight;
                 double Nbmi = 24.9;
                 
-                if (this.BMICat.Equals("Obese")|| this.BMICat.Equals("Overweight"))
+                if (this.BMICategory.ToString().Equals("Obese")|| this.BMICategory.ToString().Equals("Overweight"))
                 {
                     double totalWeightForNormalCategory = Nbmi * (Math.Pow(this.totalHeightInMetres, 2));
                     correctWeight = this.totalWeightInKgs - totalWeightForNormalCategory;
