@@ -40,7 +40,7 @@ namespace UserAcceptanceTests
         [TestInitialize]                // run before each unit test
         public void Setup()
         {
-            this.webAppUri = testContextInstance.Properties["webAppUri"].ToString();
+            this.webAppUri = "https://bmiwepapp.azurewebsites.net/";
             //This is pulling your URL from SeleniumTest.runsettings
             //this.webAppUri = "https://kanolan-bmi-qa.azurewebsites.net/";
         }
