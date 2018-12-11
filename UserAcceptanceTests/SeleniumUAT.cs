@@ -20,7 +20,7 @@ namespace UserAcceptanceTests
     public class UnitTest1
     {
         // .runsettings file contains test run parameters
-        // e.g. URI for app
+        // e.g. URI for webapp
         // test context for this run
 
         private TestContext testContextInstance;
