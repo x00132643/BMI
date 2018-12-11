@@ -49,9 +49,9 @@ namespace UserAcceptanceTests
         public void TestBMI()
         {
             //This is what the pipeline needs
-            //using (IWebDriver driver = new ChromeDriver(Environment.GetEnvironmentVariable("ChromeWebDriver")))
+            using (IWebDriver driver = new ChromeDriver(Environment.GetEnvironmentVariable("ChromeWebDriver")))
             //This is what Visual Studios needs
-            using (IWebDriver driver = new ChromeDriver())
+            //using (IWebDriver driver = new ChromeDriver())
             {
                 // any exception below result in a test fail
 
